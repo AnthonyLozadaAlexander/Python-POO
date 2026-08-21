@@ -35,3 +35,11 @@ class Estacionamiento():
 			return True
 		else:
 			return False
+
+	def buscar_coche(self, placa: str) -> Coche | None:
+		# Bucle foreach que recorre la lista de coches dentro del estacionamiento y busca el coche
+		for coche in self._coches_Dentro:
+			if(coche.placa == placa):
+				return coche
+
+		return None
