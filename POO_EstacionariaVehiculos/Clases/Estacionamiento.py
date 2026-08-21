@@ -11,7 +11,7 @@ class Estacionamiento():
 		self._nombre : str = nombre
 		self._capacidad_Max : int = capacidad_Max
 		self._tarifaFija : float = tarifaFija
-		self._coches_Dentro : list[Coche] = list()
+		self._coches_Dentro : list[Coche] = [] # se inicializa la lista de coches como vacia
 		self._total : float = 0.0
 
 	@property
