@@ -3,7 +3,7 @@
 	_largoChasis: int = 0
 	_anchoChasis: int = 0
 	_ruedas: int = 0
-	_enmarcha: bool = False
+	_arrancar: bool = False
 
 	# Constructor con parametros
 	def __init__(self, largoChasis, anchoChasis, ruedas):
@@ -28,15 +28,15 @@
 
 	@property
 	def enmarcha(self) -> bool:
-		return self._enmarcha
+		return self._arrancar
 
 	# Para crear el setter debo crear antes el getter, ya que el setter es un metodo que permite modificar el valor de un atributo privado, en este caso el atributo privado es _enmarcha
 	@enmarcha.setter
 	def enmarcha(self, valor: bool):
-		self._enmarcha = valor
+		self._arrancar = valor
 
 	# Metodo para mostrar la informacion del coche
-	def toString(self) -> str:
+	def mostrarInfo(self) -> str:
 		return (f"Informacion Del Vehiculo: \n"
 		        f" Largo Chasis: {self._largoChasis} \n"
 		        f"Ancho Chasis: {self._anchoChasis} \n"
