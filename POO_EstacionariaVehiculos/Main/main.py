@@ -2,7 +2,7 @@
 
 def main():
 	miCoche = Coche(120, 250, 4)
-	print(miCoche.mostrarInfo())
+	print(miCoche)
 
 if __name__ == "__main__":
 	main()
