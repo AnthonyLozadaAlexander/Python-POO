@@ -9,6 +9,7 @@
 	_hora_entrada: str
 
 	# Constructor con parametros
+	# self. es el equivalente a this.
 	def __init__(self, placa: str, marca : str, largo_chasis : int, ancho_chasis : int, ruedas: int) -> None:
 		self._largo_chasis : int  = largo_chasis
 		self._ancho_chasis : int = ancho_chasis
@@ -16,6 +17,14 @@
 		self._placa : str = placa
 		self._marca : str = marca
 		self._arrancar : bool = False
+
+	@property
+	def marca(self) -> str:
+		return self._marca
+
+	@property
+	def placa(self) -> str:
+		return self._placa
 
 	@property
 	def largo_chasis(self) -> int:
