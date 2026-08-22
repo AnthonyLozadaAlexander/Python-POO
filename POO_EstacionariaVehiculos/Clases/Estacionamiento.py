@@ -67,3 +67,13 @@ class Estacionamiento:
         self.hora_entrada = hora_entrada
 
         return True
+
+    def registrar_salida(self, placa: str, hora_salida: int) -> float:
+        monto : float
+        for coche in self._coches_Dentro:
+            if (not (coche.placa == placa)):
+                return 0.0
+            else:
+                monto = (hora_salida - coche.hora_entrada) * self.tarifaFija
+                self._coches_dentro.remove(coche)
+                _total = _total + monto
