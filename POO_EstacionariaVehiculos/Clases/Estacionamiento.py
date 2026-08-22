@@ -1,12 +1,12 @@
 ﻿from POO_EstacionariaVehiculos.Clases.Coche import Coche  # importando la clase Coche
 
-
 class Estacionamiento:
     _nombre: str
     _capacidad_Max: int
     _tarifaFija: float
     _coches_Dentro: list[Coche]
     _total: float
+    _hora_entrada: int
 
     def __init__(self, nombre: str, capacidad_Max: int, tarifaFija: int) -> None:
         self._nombre: str = nombre
@@ -46,3 +46,24 @@ class Estacionamiento:
                 return coche
 
         return None
+
+    @property
+    def hora_entrada(self) -> int:
+        return self._hora_entrada
+
+    @hora_entrada.setter
+    def hora_entrada(self, hora: int) -> None:
+        self._hora_entrada = hora
+
+    def registrar_entrada(self, coche: Coche, hora_entrada: int) -> bool:
+
+        if self.esta_lleno():
+            return False
+
+        if self.buscar_coche(coche.placa):
+            return False
+
+        self._coches_Dentro.append(coche)
+        self.hora_entrada = hora_entrada
+
+        return True
