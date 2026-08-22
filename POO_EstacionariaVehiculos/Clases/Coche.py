@@ -6,7 +6,6 @@
     _arrancar: bool
     _placa: str
     _marca: str
-    _hora_entrada: str
 
     # Constructor con parametros
     # self. es el equivalente a this.
@@ -44,13 +43,6 @@
     def enmarcha(self) -> bool:
         return self._arrancar
 
-    @property
-    def hora_entrada(self) -> str:
-        return self._hora_entrada
-
-    @hora_entrada.setter
-    def hora_entrada(self, hora: str) -> None:
-        self._hora_entrada = hora
 
     # Para crear el setter debo crear antes el getter, ya que el setter es un metodo que permite modificar el valor de un atributo privado, en este caso el atributo privado es _enmarcha
     @enmarcha.setter
@@ -67,12 +59,14 @@
             f"Informacion Del Vehiculo: \n"
             f"Placa: {self._placa}\n"
             f"Marca: {self._marca}\n"
-            f"Hora Entrada: {self._hora_entrada}\n"
             f" Largo Chasis: {self._largo_chasis} \n"
             f"Ancho Chasis: {self._ancho_chasis} \n"
             f"Ruedas: {self._ruedas}"
         )
 
     # Metodo para mostrar para el desarrollador
-    def __repr__(self) -> str:
-        return f"Coche({self._placa}, {self._marca}, {self._largo_chasis}, {self._ancho_chasis}, {self._ruedas})"
+    def __repr__(self) -> None:
+        print(f"Coche({self._placa}, {self._marca}, {self._largo_chasis}, {self._ancho_chasis}, {self._ruedas})")
+    
+    
+        
